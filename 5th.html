@@ -5,49 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat UI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
         body {
-            display: flex;
             height: 100vh;
             background-color: #f8f1e8;
-        }
-
-        .sidebar {
-            width: 100%;
-            max-width: 380px;
-            /* Adjust width based on your UI preference */
-            background: #f8f1e8;
-            padding: 10px;
-            border-right: 1px solid #d3c8b8;
-            overflow-y: auto;
-        }
-
-        .chat-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
         }
 
         .chat-item {
             display: flex;
             align-items: center;
-            gap: 15px;
             padding: 12px;
             background: #fff;
             border-radius: 8px;
             cursor: pointer;
             transition: background 0.3s;
-            width: 100%;
-            /* Makes the chat item cover full width */
-            box-sizing: border-box;
-            /* Ensures padding doesn't add extra width */
         }
 
         .chat-item:hover {
@@ -59,57 +31,14 @@
             height: 40px;
             border-radius: 50%;
             background: #ded9c4;
-            /* Light background for initials */
             display: flex;
             justify-content: center;
             align-items: center;
             font-weight: bold;
             font-size: 18px;
             color: #333;
-            text-transform: uppercase;
         }
 
-        .chat-item img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-        }
-
-
-        .chat-details strong {
-            font-size: 16px;
-            color: #000;
-        }
-
-        .chat-details strong {
-            display: block;
-            font-size: 16px;
-        }
-
-        .content {
-            width: 80%;
-            height: 88%;
-            max-width: 1000px;
-            background: #CEDEEC;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .chat-box {
-            width: 80%;
-            max-width: 600px;
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
         .message {
             display: flex;
             align-items: center;
@@ -119,40 +48,18 @@
             max-width: 70%;
             font-size: 14px;
         }
-    
-        .message img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-        }
-    
+
         .user-a {
             background: #d1e7dd;
             align-self: flex-start;
         }
-    
+
         .user-b {
             background: #f8d7da;
             align-self: flex-end;
             flex-direction: row-reverse;
         }
-        .right-panel {
-            background: #ffffff;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 350px;
-        }
-        
-        .user-info-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
+
         .user-icon {
             width: 50px;
             height: 50px;
@@ -164,142 +71,8 @@
             font-weight: bold;
             font-size: 22px;
             color: white;
-            text-transform: uppercase;
         }
-        
-        .user-meta strong {
-            font-size: 18px;
-            color: #333;
-        }
-        
-        .user-meta p {
-            font-size: 14px;
-            color: #666;
-            margin: 3px 0 0;
-        }
-        
-        .info-section {
-            margin-top: 12px;
-            padding: 12px;
-            background: #cedeec;
-            border-radius: 8px;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
-        }
-        
-        .info-section p {
-            font-size: 14px;
-            color: #333;
-            margin: 6px 0;
-        }
-        
-        .info-section strong {
-            color: #555;
-        }
-        
-        .status-active {
-            color: green;
-            font-weight: bold;
-        }
-        
-        .status-allowed {
-            color: blue;
-            font-weight: bold;
-        }
-        
-        /* Toggle Switch */
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-        
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 34px;
-            height: 20px;
-        }
-        
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 20px;
-        }
-        
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 14px;
-            width: 14px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
-        }
-        
-        input:checked + .slider {
-            background-color: #004d40;
-        }
-        
-        input:checked + .slider:before {
-            transform: translateX(14px);
-        }
-        
-        /* Dropdown Styling */
-        .dropdown {
-            margin-top: 10px;
-        }
-        
-        .dropdown-btn {
-            width: 100%;
-            background: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        
-        .dropdown-content {
-            display: none;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background: #fff;
-            margin-top: 5px;
-            border-radius: 5px;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        
-        @media (max-width: 768px) {
 
-            .sidebar,
-            .right-panel {
-                width: 80px;
-                padding: 10px;
-            }
-
-            .chat-item .chat-details {
-                display: none;
-            }
-        }
         .intervene-button {
             position: fixed;
             bottom: 20px;
@@ -315,128 +88,111 @@
             outline: none;
             font-weight: bold;
         }
-        
+
         .intervene-button:hover {
             background-color: #e6f2f2;
         }
-        
     </style>
 </head>
 
-<body>
-    <div class="sidebar">
-        <div class="chat-list">
-            <div class="chat-item">
-                <div class="chat-icon">R</div>
-                <div class="chat-details">
-                    <strong>RANI</strong>
-                    <p>Utility Conversation Started</p>
-                </div>
-            </div>
-            
-            <div class="chat-item">
-                <div class="chat-icon">A</div>
-                <div class="chat-details">
-                    <strong>AASHI</strong>
-                    <p>Thanks for contacting MCUBE...</p>
-                </div>
-            </div>
-            
-            <div class="chat-item">
-                <div class="chat-icon">C</div>
-                <div class="chat-details">
-                    <strong>CSM</strong>
-                    <p>Utility Conversation Started</p>
-                </div>
-            </div>
-            
-            <div class="chat-item">
-                <div class="chat-icon">G</div>
-                <div class="chat-details">
-                    <strong>GURU</strong>
-                    <p>Is this real?</p>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="content">
-        <div class="message user-a">
-            <img src="https://i.pinimg.com/474x/0d/79/f3/0d79f3defd8515a72c44c8f69d438aa3.jpg" alt="User A">
-            <p>Hi!</p>
-        </div>
-        <div class="message user-b">
-            <img src="https://w7.pngwing.com/pngs/159/721/png-transparent-logo-brand-pattern-letter-b-text-rectangle-logo.png" alt="User B">
-            <p>Hello!</p>
-        </div>
-        <div class="message user-a">
-            <img src="https://i.pinimg.com/474x/0d/79/f3/0d79f3defd8515a72c44c8f69d438aa3.jpg" alt="User A">
-            <p>How are you?</p>
-        </div>
-        <div class="message user-b">
-            <img src="https://w7.pngwing.com/pngs/159/721/png-transparent-logo-brand-pattern-letter-b-text-rectangle-logo.png" alt="User B">
-            <p>I'm good, thanks! What about you?</p>
-        </div>
-        <div class="message user-a">
-            <img src="https://i.pinimg.com/474x/0d/79/f3/0d79f3defd8515a72c44c8f69d438aa3.jpg" alt="User A">
-            <p>I'm great! Just working on a project.</p>
-        </div>
-        <div class="message user-b">
-            <img src="https://w7.pngwing.com/pngs/159/721/png-transparent-logo-brand-pattern-letter-b-text-rectangle-logo.png" alt="User B">
-            <p>That sounds interesting!</p>
-        </div>
-    </div>
-    
-    <div class="button-container">
-        <button class="intervene-button">Intervene</button>
-    </div>
-    
+<body class="d-flex">
 
-    <div class="right-panel">
-        <div class="user-info-right">
-            <div class="user-icon">A</div>
-            <div class="user-meta">
-                <strong>AASHI</strong>
-                <p>+97181884745</p>
+    <!-- Sidebar -->
+    <div class="sidebar bg-light p-3 border-right" style="width: 25%;">
+        <div class="chat-list">
+            <div class="chat-item d-flex mb-2">
+                <div class="chat-icon">R</div>
+                <div class="ml-2">
+                    <strong>RANI</strong>
+                    <p class="mb-0">Utility Conversation Started</p>
+                </div>
+            </div>
+            <div class="chat-item d-flex mb-2">
+                <div class="chat-icon">A</div>
+                <div class="ml-2">
+                    <strong>AASHI</strong>
+                    <p class="mb-0">Thanks for contacting MCUBE...</p>
+                </div>
+            </div>
+            <div class="chat-item d-flex mb-2">
+                <div class="chat-icon">C</div>
+                <div class="ml-2">
+                    <strong>CSM</strong>
+                    <p class="mb-0">Utility Conversation Started</p>
+                </div>
             </div>
         </div>
-    
-        <div class="info-section">
+    </div>
+
+    <!-- Main Chat Content -->
+    <div class="content flex-grow-1 p-3 bg-light">
+        <div class="d-flex flex-column">
+            <div class="message user-a d-flex align-items-center">
+                <img src="https://i.pinimg.com/474x/0d/79/f3/0d79f3defd8515a72c44c8f69d438aa3.jpg" class="rounded-circle" width="30">
+                <p class="mb-0 ml-2">Hi!</p>
+            </div>
+            <div class="message user-b d-flex align-items-center">
+                <img src="https://w7.pngwing.com/pngs/159/721/png-transparent-logo-brand-pattern-letter-b-text-rectangle-logo.png" class="rounded-circle" width="30">
+                <p class="mb-0 ml-2">Hello!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel bg-white p-3 border-left" style="width: 25%;">
+        <div class="user-info-right d-flex align-items-center pb-2 border-bottom">
+            <div class="user-icon">A</div>
+            <div class="ml-2">
+                <strong>AASHI</strong>
+                <p class="mb-0 text-muted">+97181884745</p>
+            </div>
+        </div>
+
+        <div class="mt-3 p-3 bg-light rounded shadow-sm">
             <p><strong>Status:</strong> Requesting</p>
             <p><strong>Last Active:</strong> 3/1/2025, 4:15 PM</p>
             <p><strong>Session Messages:</strong> 3</p>
             <p><strong>Unresolved Queries:</strong> 0</p>
             <p><strong>Source:</strong> ORGANIC</p>
             <p><strong>First Message:</strong> ----</p>
-            <p><strong>WA Conversation:</strong> <span class="status-active">Active</span></p>
-            <p><strong>MAU Status:</strong> <span class="status-active">Active</span></p>
-            <p><strong>Incoming:</strong> <span class="status-allowed">Allowed</span></p>
-    
-            <div class="toggle-container">
-                <p><strong>Opted In</strong></p>
-                <label class="toggle-switch">
-                    <input type="checkbox" checked>
-                    <span class="slider"></span>
-                </label>
+            <p><strong>WA Conversation:</strong> <span class="text-success font-weight-bold">Active</span></p>
+            <p><strong>MAU Status:</strong> <span class="text-success font-weight-bold">Active</span></p>
+            <p><strong>Incoming:</strong> <span class="text-primary font-weight-bold">Allowed</span></p>
+
+            <div class="d-flex align-items-center justify-content-between mt-3">
+                <p class="mb-0"><strong>Opted In</strong></p>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="toggleSwitch" checked>
+                    <label class="custom-control-label" for="toggleSwitch"></label>
+                </div>
             </div>
         </div>
-    
-        <div class="dropdown">
-            <button class="dropdown-btn">Campaigns ▼</button>
-            <div class="dropdown-content">
-                <p>No campaigns assigned</p>
+
+        <div class="dropdown mt-3">
+            <button class="btn btn-light btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                Campaigns
+            </button>
+            <div class="dropdown-menu">
+                <p class="dropdown-item">No campaigns assigned</p>
             </div>
         </div>
-    
-        <div class="dropdown">
-            <button class="dropdown-btn">Attributes ▼</button>
-            <div class="dropdown-content">
-                <p>No attributes found</p>
+
+        <div class="dropdown mt-2">
+            <button class="btn btn-light btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                Attributes
+            </button>
+            <div class="dropdown-menu">
+                <p class="dropdown-item">No attributes found</p>
             </div>
         </div>
     </div>
-    
-    
+
+    <!-- Intervene Button -->
+    <button class="intervene-button btn">Intervene</button>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
