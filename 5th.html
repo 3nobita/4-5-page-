@@ -6,142 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat UI</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            height: 100vh;
-            background-color: #f8f1e8;
-        }
-
-        .chat-item {
-            display: flex;
-            align-items: center;
-            padding: 12px;
-            background: #fff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .chat-item:hover {
-            background: #e6dccb;
-        }
-
-        .chat-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #ded9c4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .message {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            border-radius: 20px;
-            max-width: 70%;
-            font-size: 14px;
-        }
-
-        .user-a {
-            background: #d1e7dd;
-            align-self: flex-start;
-        }
-
-        .user-b {
-            background: #f8d7da;
-            align-self: flex-end;
-            flex-direction: row-reverse;
-        }
-
-        .user-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: #f4a621;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 22px;
-            color: white;
-        }
-
-        .intervene-button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 1px solid #5c8181;
-            background-color: transparent;
-            color: #5c8181;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            cursor: pointer;
-            outline: none;
-            font-weight: bold;
-        }
-
-        .intervene-button:hover {
-            background-color: #e6f2f2;
-        }
-    </style>
 </head>
 
-<body class="d-flex">
+<body style="height: 100vh; background-color: #f8f1e8;" class="d-flex">
 
     <!-- Sidebar -->
-    <div class="sidebar bg-light p-3 border-right" style="width: 25%;">
-        <div class="chat-list">
-            <div class="chat-item d-flex mb-2">
-                <div class="chat-icon">R</div>
-                <div class="ml-2">
-                    <strong>RANI</strong>
-                    <p class="mb-0">Utility Conversation Started</p>
-                </div>
+    <div class="bg-light border-right p-3" style="width: 25%;">
+        <div class="mb-2 d-flex align-items-center bg-white p-2 rounded" style="cursor: pointer;">
+            <div class="rounded-circle d-flex align-items-center justify-content-center text-dark font-weight-bold"
+                style="width: 40px; height: 40px; background: #ded9c4;">R</div>
+            <div class="ml-2">
+                <strong>RANI</strong>
+                <p class="mb-0 text-muted">Utility Conversation Started</p>
             </div>
-            <div class="chat-item d-flex mb-2">
-                <div class="chat-icon">A</div>
-                <div class="ml-2">
-                    <strong>AASHI</strong>
-                    <p class="mb-0">Thanks for contacting MCUBE...</p>
-                </div>
-            </div>
-            <div class="chat-item d-flex mb-2">
-                <div class="chat-icon">C</div>
-                <div class="ml-2">
-                    <strong>CSM</strong>
-                    <p class="mb-0">Utility Conversation Started</p>
-                </div>
+        </div>
+        <div class="mb-2 d-flex align-items-center bg-white p-2 rounded" style="cursor: pointer;">
+            <div class="rounded-circle d-flex align-items-center justify-content-center text-dark font-weight-bold"
+                style="width: 40px; height: 40px; background: #ded9c4;">A</div>
+            <div class="ml-2">
+                <strong>AASHI</strong>
+                <p class="mb-0 text-muted">Thanks for contacting MCUBE...</p>
             </div>
         </div>
     </div>
 
     <!-- Main Chat Content -->
-    <div class="content flex-grow-1 p-3 bg-light">
+    <div class="flex-grow-1 p-3 bg-light">
         <div class="d-flex flex-column">
-            <div class="message user-a d-flex align-items-center">
-                <img src="https://i.pinimg.com/474x/0d/79/f3/0d79f3defd8515a72c44c8f69d438aa3.jpg" class="rounded-circle" width="30">
+            <div class="d-flex align-items-center p-2 rounded"
+                style="background: #d1e7dd; max-width: 70%; font-size: 14px;">
+                <img src="https://i.pinimg.com/474x/0d/79/f3/0d79f3defd8515a72c44c8f69d438aa3.jpg" class="rounded-circle"
+                    width="30">
                 <p class="mb-0 ml-2">Hi!</p>
             </div>
-            <div class="message user-b d-flex align-items-center">
-                <img src="https://w7.pngwing.com/pngs/159/721/png-transparent-logo-brand-pattern-letter-b-text-rectangle-logo.png" class="rounded-circle" width="30">
+            <div class="d-flex align-items-center p-2 rounded ml-auto"
+                style="background: #f8d7da; max-width: 70%; font-size: 14px;">
+                <img src="https://w7.pngwing.com/pngs/159/721/png-transparent-logo-brand-pattern-letter-b-text-rectangle-logo.png"
+                    class="rounded-circle" width="30">
                 <p class="mb-0 ml-2">Hello!</p>
             </div>
         </div>
     </div>
 
     <!-- Right Panel -->
-    <div class="right-panel bg-white p-3 border-left" style="width: 25%;">
-        <div class="user-info-right d-flex align-items-center pb-2 border-bottom">
-            <div class="user-icon">A</div>
+    <div class="bg-white border-left p-3" style="width: 25%;">
+        <div class="d-flex align-items-center pb-2 border-bottom">
+            <div class="rounded-circle text-white font-weight-bold d-flex align-items-center justify-content-center"
+                style="width: 50px; height: 50px; background: #f4a621;">A</div>
             <div class="ml-2">
                 <strong>AASHI</strong>
                 <p class="mb-0 text-muted">+97181884745</p>
@@ -188,7 +99,11 @@
     </div>
 
     <!-- Intervene Button -->
-    <button class="intervene-button btn">Intervene</button>
+    <button class="btn position-fixed" style="bottom: 20px; left: 50%; transform: translateX(-50%); 
+        border: 1px solid #5c8181; background-color: transparent; color: #5c8181; padding: 8px 20px; 
+        border-radius: 20px; font-size: 14px; font-weight: bold;">
+        Intervene
+    </button>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
