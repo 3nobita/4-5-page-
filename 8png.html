@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flow Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .quick-guide {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .quota-section {
+            background: #edf7f3;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .create-flow-btn {
+            background: #0c825d;
+            color: white;
+            border-radius: 5px;
+            padding: 6px 15px;
+            border: none;
+        }
+        .table-container {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .toggle-switch {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="p-3">
+    
+    <div class="container">
+        <!-- Quick Guide -->
+        <div class="quick-guide mb-3">
+            <h6><strong>Quick Guide</strong></h6>
+            <p class="text-muted">You can connect with Facebook to fetch catalogue and manage it from our platform.</p>
+        </div>
+
+        <!-- Total Quota -->
+        <div class="quota-section mb-3">
+            <div>
+                <h6>Total Quota</h6>
+                <p class="mb-0"><strong>5</strong> Flows</p>
+            </div>
+            <button class="create-flow-btn">+ Create Flow</button>
+        </div>
+
+        <!-- Search & Table -->
+        <div class="table-container">
+            <input type="text" class="form-control mb-3" placeholder="Search by flow name">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Flow Name</th>
+                        <th>Created By</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Untitled</td>
+                        <td>VMC Technologies Pvt Ltd.</td>
+                        <td><input type="checkbox" class="toggle-switch"></td>
+                        <td>
+                            <button class="btn btn-link p-0">✏️</button>
+                            <button class="btn btn-link p-0">📎</button>
+                            <button class="btn btn-link p-0">🗑️</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Untitled</td>
+                        <td>VMC Technologies Pvt Ltd.</td>
+                        <td><input type="checkbox" class="toggle-switch"></td>
+                        <td>
+                            <button class="btn btn-link p-0">✏️</button>
+                            <button class="btn btn-link p-0">📎</button>
+                            <button class="btn btn-link p-0">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="text-center mt-3 text-muted">
+            <small>1-5 of 5</small>
+        </div>
+    </div>
+
+</body>
+</html>
