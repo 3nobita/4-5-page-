@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Management</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body style="background-color: #f8f9f7; padding: 20px; font-family: Arial, sans-serif;">
+
+    <!-- Main Container -->
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+
+        <!-- Search & Refresh -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <input type="text" class="form-control" placeholder="Search by campaign name"
+                style="border-radius: 5px; padding: 8px; width: 300px;">
+            <button class="btn btn-link" style="color: #555;">🔄 Refresh</button>
+        </div>
+
+        <!-- Tabs -->
+        <div style="display: flex; border-bottom: 2px solid #ddd; margin-bottom: 10px;">
+            <button class="btn btn-link" style="font-weight: bold; color: #2d6a4f; border-bottom: 2px solid #2d6a4f;">
+                All
+            </button>
+            <button class="btn btn-link" style="color: #555;">Broadcast</button>
+            <button class="btn btn-link" style="color: #555;">API</button>
+            <button class="btn btn-link" style="color: #555;">Scheduled</button>
+        </div>
+
+        <!-- Table -->
+        <table class="table" style="background: white;">
+            <thead>
+                <tr style="background: #f8f9f7;">
+                    <th style="padding: 10px;">📊 Campaign</th>
+                    <th style="padding: 10px;">Type</th>
+                    <th style="padding: 10px;">Created At</th>
+                    <th style="padding: 10px;">Status</th>
+                    <th style="padding: 10px;">Audience</th>
+                    <th style="padding: 10px;">Submit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px;">NickEngage</td>
+                    <td style="padding: 10px;">BROADCAST</td>
+                    <td style="padding: 10px;">Jan 31, 2025, 6:34 PM</td>
+                    <td style="padding: 10px;"><span class="badge badge-success">Sent</span></td>
+                    <td style="padding: 10px;">1</td>
+                    <td style="padding: 10px;">0</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">testmcube111</td>
+                    <td style="padding: 10px;">BROADCAST</td>
+                    <td style="padding: 10px;">Jan 25, 2025, 7:52 PM</td>
+                    <td style="padding: 10px;"><span class="badge badge-success">Sent</span></td>
+                    <td style="padding: 10px;">1</td>
+                    <td style="padding: 10px;">0</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">testmcube111</td>
+                    <td style="padding: 10px;">BROADCAST</td>
+                    <td style="padding: 10px;">Jan 25, 2025, 2:48 PM</td>
+                    <td style="padding: 10px;"><span class="badge badge-success">Sent</span></td>
+                    <td style="padding: 10px;">1</td>
+                    <td style="padding: 10px;">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; color: #555;">
+            <span>Rows per page: 
+                <select style="border: none; background: transparent; color: #555;">
+                    <option>10</option>
+                    <option>25</option>
+                    <option>50</option>
+                </select>
+            </span>
+            <span>1-6 of 8 &nbsp; ⬅️ ⬅️ ➡️ ➡️</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
