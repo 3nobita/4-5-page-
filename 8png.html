@@ -1,101 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flow Management</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        .quick-guide {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .quota-section {
-            background: #edf7f3;
-            padding: 15px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .create-flow-btn {
-            background: #0c825d;
-            color: white;
-            border-radius: 5px;
-            padding: 6px 15px;
-            border: none;
-        }
-        .table-container {
-            background: white;
-            padding: 15px;
-            border-radius: 5px;
-        }
-        .toggle-switch {
-            cursor: pointer;
-        }
-    </style>
 </head>
-<body class="p-3">
-    
-    <div class="container">
+
+<body style="background-color: #f8f9f7; padding: 20px; font-family: Arial, sans-serif;">
+
+    <!-- Main Container -->
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+
         <!-- Quick Guide -->
-        <div class="quick-guide mb-3">
-            <h6><strong>Quick Guide</strong></h6>
-            <p class="text-muted">You can connect with Facebook to fetch catalogue and manage it from our platform.</p>
+        <div style="background: #f8f9f7; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            <h6 style="font-weight: bold;">Quick Guide</h6>
+            <p style="margin-bottom: 0; color: #555;">
+                You can connect with Facebook to fetch the catalog and manage it from our platform.
+            </p>
         </div>
 
-        <!-- Total Quota -->
-        <div class="quota-section mb-3">
+        <!-- Quota Section -->
+        <div style="background: #eef5f0; padding: 15px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
             <div>
-                <h6>Total Quota</h6>
-                <p class="mb-0"><strong>5</strong> Flows</p>
+                <p style="margin: 0; font-weight: bold;">Total Quota</p>
+                <h5 style="margin: 0; color: #2d6a4f;">5 <span style="font-size: 14px; font-weight: normal;">Flows</span></h5>
             </div>
-            <button class="create-flow-btn">+ Create Flow</button>
+            <button class="btn btn-success" style="border-radius: 5px; padding: 5px 15px;">+ Create Flow</button>
         </div>
 
-        <!-- Search & Table -->
-        <div class="table-container">
-            <input type="text" class="form-control mb-3" placeholder="Search by flow name">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Flow Name</th>
-                        <th>Created By</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Untitled</td>
-                        <td>VMC Technologies Pvt Ltd.</td>
-                        <td><input type="checkbox" class="toggle-switch"></td>
-                        <td>
-                            <button class="btn btn-link p-0">✏️</button>
-                            <button class="btn btn-link p-0">📎</button>
-                            <button class="btn btn-link p-0">🗑️</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Untitled</td>
-                        <td>VMC Technologies Pvt Ltd.</td>
-                        <td><input type="checkbox" class="toggle-switch"></td>
-                        <td>
-                            <button class="btn btn-link p-0">✏️</button>
-                            <button class="btn btn-link p-0">📎</button>
-                            <button class="btn btn-link p-0">🗑️</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        
+        <!-- Search Bar -->
+        <input type="text" class="form-control" placeholder="Search by flow name" 
+            style="margin-bottom: 20px; border-radius: 5px; padding: 8px;">
+
+        <!-- Table -->
+        <table class="table" style="background: white; border-radius: 8px;">
+            <thead>
+                <tr style="background: #f8f9f7;">
+                    <th style="padding: 10px;">Flow Name</th>
+                    <th style="padding: 10px;">Created By</th>
+                    <th style="padding: 10px;">Status</th>
+                    <th style="padding: 10px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px;">Untitled</td>
+                    <td style="padding: 10px;">VMC Technologies Pvt Ltd.</td>
+                    <td style="padding: 10px;">
+                        <input type="checkbox">
+                    </td>
+                    <td style="padding: 10px;">
+                        <button class="btn btn-link" style="padding: 0; color: #555;">✏️</button>
+                        <button class="btn btn-link" style="padding: 0; color: #555;">📄</button>
+                        <button class="btn btn-link" style="padding: 0; color: #555;">🗑</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Untitled</td>
+                    <td style="padding: 10px;">VMC Technologies Pvt Ltd.</td>
+                    <td style="padding: 10px;">
+                        <input type="checkbox">
+                    </td>
+                    <td style="padding: 10px;">
+                        <button class="btn btn-link" style="padding: 0; color: #555;">✏️</button>
+                        <button class="btn btn-link" style="padding: 0; color: #555;">📄</button>
+                        <button class="btn btn-link" style="padding: 0; color: #555;">🗑</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <!-- Pagination -->
-        <div class="text-center mt-3 text-muted">
-            <small>1-5 of 5</small>
+        <div style="text-align: center; padding: 10px; color: #555;">
+            1-5 of 5 &nbsp;
+            <span style="cursor: pointer;">⬅️</span> &nbsp;
+            <span style="cursor: pointer;">➡️</span>
         </div>
+
     </div>
 
 </body>
+
 </html>
